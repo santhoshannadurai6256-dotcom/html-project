@@ -7,12 +7,19 @@
     <groupId>com.demo</groupId>
     <artifactId>htmlsite</artifactId>
     <version>1.0</version>
-
-    <!-- Important: Package as WAR -->
     <packaging>war</packaging>
 
     <build>
         <finalName>htmlsite</finalName>
+
+        <plugins>
+            <!-- ✅ FIX: Upgrade WAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version> <!-- ✅ Modern plugin compatible with Java 17+ -->
+            </plugin>
+        </plugins>
     </build>
 
 </project>
